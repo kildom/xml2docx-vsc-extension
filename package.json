@@ -1,0 +1,46 @@
+{
+  "name": "xml2docx-support",
+  "displayName": "xml2docx Support",
+  "description": "Simplify working with xml2docx",
+  "repository": "https://github.com/kildom/xml2docx-vsc-extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "xml2docx",
+        "aliases": [
+          "xml2docx",
+          "xml2docx"
+        ],
+        "extensions": [
+          ".xml2docx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "xml2docx",
+        "scopeName": "source.xml2docx",
+        "path": "./syntaxes/xml2docx.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.xml": "xml",
+          "meta.embedded.block.javascript": "javascript"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "pack": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.26.1"
+  }
+}

@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "xml2docx",
+	"patterns": [
+		{
+			"name": "meta.embedded.block.xml",
+			"patterns": [
+				{
+					"contentName": "meta.embedded.block.javascript",
+					"begin": "(<%)(!|=|)",
+					"end": "%>",
+					"beginCaptures": {
+						"1": {
+							"name": "comment.block"
+						},
+						"2": {
+							"name": "keyword.control"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "comment.block"
+						}
+					},
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				},
+				{
+					"include": "text.xml"
+				}
+			],
+			"begin": "^",
+			"end": "dFLKjhgSDxml2docxFIVUyxkjhGLdfs"
+		}
+	],
+	"scopeName": "source.xml2docx"
+}
